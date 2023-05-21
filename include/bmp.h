@@ -25,7 +25,7 @@ typedef struct{
     unsigned int yresolut;
     unsigned int ncolors;
     unsigned int impt_colors;
-}BMP_hdr;
+}BMP_Hdr;
 
 /* bmp图像结构体 */
 typedef struct{
@@ -35,14 +35,14 @@ typedef struct{
     unsigned int height;
     unsigned int byte_pixel;
     unsigned char *data;
-}BMP_img;
+}BMP_Img;
 
 
 /* bmp处理函数 */
-int bmp_color(BMP_img *,int); /* 颜色滤波器 */
-int bmp_edge(BMP_img *,int); /* 边缘检测 */
-int bmp_equalize(BMP_img *); /* 颜色均衡 */
-int bmp_invert(BMP_img *); /* 颜色反转*/
+int bmp_color(BMP_Img *,int); /* 颜色滤波器 */
+int bmp_edge(BMP_Img *,int); /* 边缘检测 */
+int bmp_equalize(BMP_Img *); /* 颜色均衡 */
+int bmp_invert(BMP_Img *); /* 颜色反转*/
 
 
 #endif // __BMP_IMAGE_H
