@@ -8,35 +8,35 @@
 
 /* bmp头信息描述结构体 */
 #pragma pack(1)
-typedef struct __hdr{
-    __UINT16_TYPE__ type;
-    __UINT32_TYPE__ size;
-    __UINT16_TYPE__ reserved1;
-    __UINT16_TYPE__ reserved2;
-    __UINT32_TYPE__ offset;
-    __UINT32_TYPE__ hdr_size;
-    __UINT32_TYPE__ width;
-    __UINT32_TYPE__ height;
-    __UINT16_TYPE__ planes;
-    __UINT16_TYPE__ bits;
-    __UINT32_TYPE__ compres;
-    __UINT32_TYPE__ img_size;
-    __UINT32_TYPE__ xresolut;
-    __UINT32_TYPE__ yresolut;
-    __UINT32_TYPE__ ncolors;
-    __UINT32_TYPE__ impt_colors;
+typedef struct{
+    unsigned int type;
+    unsigned int size;
+    unsigned short int reserved1;
+    unsigned short int reserved2;
+    unsigned int offset;
+    unsigned int hdr_size;
+    unsigned int width;
+    unsigned int height;
+    unsigned short int planes;
+    unsigned short int bits;
+    unsigned int compres;
+    unsigned int img_size;
+    unsigned int xresolut;
+    unsigned int yresolut;
+    unsigned int ncolors;
+    unsigned int impt_colors;
 }BMP_hdr;
 
 /* bmp图像结构体 */
-struct __bmp_img{
+typedef struct{
     BMP_hdr img_hdr;
-    __UINT32_TYPE__ data_size;
-    __UINT32_TYPE__ width;
-    __UINT32_TYPE__ height;
-    __UINT32_TYPE__ byte_pixel;
-    __UINT8_TYPE__ *data;
-};
-typedef struct __bmp_img BMP_img;
+    unsigned int data_size;
+    unsigned int width;
+    unsigned int height;
+    unsigned int byte_pixel;
+    unsigned char *data;
+}BMP_img;
+
 
 /* bmp处理函数 */
 int bmp_color(BMP_img *,int); /* 颜色滤波器 */
